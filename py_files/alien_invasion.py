@@ -7,7 +7,7 @@ import time
 from pygame.sprite import Group
 
 
-# left off at page 298
+# left off at page 315
 
 def run_game():
     play_music()
@@ -27,13 +27,13 @@ def run_game():
     # make a group to store aliens
     aliens = Group()
 
+    gf.create_fleet(ai_settings, screen, ship, aliens)  # create a fleet of aliens may need to delete
     # start main loop for the game
     while True:
         gf.check_events(ai_settings, screen, ship, bullets)  # checks for KB/M activity
-        # create a fleet of aliens
-        gf.create_fleet(ai_settings, screen, aliens)
         ship.update()
-        gf.update_bullets(bullets)
+        gf.update_bullets(aliens, bullets)
+        gf.update_aliens(ai_settings, aliens)
         gf.update_screen(ai_settings, screen, ship, aliens, bullets)  # update sprite movement
         time.sleep(.01)  # limit while execution to limit CPU usage (seconds)
 
