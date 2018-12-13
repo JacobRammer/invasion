@@ -6,7 +6,8 @@ import os
 from time import sleep
 
 # TODO make aliens shoot bullets at ship
-#   add shootable missiles - may now be possible
+#   add shootable missiles - may not be possible
+#   add total kill counter
 
 
 def check_events(ai_settings, screen, stats, play_button, ship, aliens, bullets):
@@ -91,7 +92,7 @@ def play_music():
     pygame.mixer.music.play(-1)  # loop music
 
 
-def update_bullets(ai_settings, screen, ship, aliens, bullets):
+def update_bullets(ai_settings, screen, stats, sb, ship, aliens, bullets):
     """update position of bullets and get rid of bullets that have gone off screen"""
 
     # update bullet positions
@@ -102,14 +103,20 @@ def update_bullets(ai_settings, screen, ship, aliens, bullets):
             bullets.remove(bullet)
 
     # check for bullet collision events
-    check_bullet_alien_collisions(ai_settings, screen, ship, aliens, bullets)
+    check_bullet_alien_collisions(ai_settings, screen, stats, sb, ship, aliens, bullets)
 
 
-def check_bullet_alien_collisions(ai_settings, screen, ship, aliens, bullets):
+def check_bullet_alien_collisions(ai_settings, screen, stats, sb, ship, aliens, bullets):
     """respond to bullets and alien collisions"""
 
     # check for alien-bullet collision
     collisions = pygame.sprite.groupcollide(bullets, aliens, True, True)  # if bullet-alien collision true, delete both
+
+    if collisions:  # bullet - alien collide
+        for aliens in collisions.values():
+            stats.score += ai_settings.alien_points * len(aliens)  # to make sure all collisions are scored
+            sb.prep_score()
+        check_high_score(stats, sb)
 
     # check to see if all aliens have been destroyed
     if len(aliens) == 0:
@@ -248,3 +255,11 @@ def check_play_button(ai_settings, screen, stats, play_button, ship, aliens, bul
         # create a new fleet and center the ship
         create_fleet(ai_settings, screen, ship, aliens)  # create a new alien fleet
         ship.center_ship()  # center the ship
+
+
+def check_high_score(stats, sb):
+    """check to see if there's a new high score"""
+
+    if stats.score > stats.high_score:  # check current score against high score
+        stats.high_score = stats.score  # change high score
+        sb.prep_high_score()
