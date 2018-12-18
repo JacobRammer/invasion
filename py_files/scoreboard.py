@@ -43,7 +43,7 @@ class Scoreboard():
         high_score = int(round(self.stats.high_score, -1))  # round high score to nearest 10th value
         high_score_str = "{:,}".format(high_score)  # format score with commas
         self.high_score_image = self.font.render(high_score_str, True,
-                                                         self.text_color, self.ai_settings.bg_color)
+                                                 self.text_color, self.ai_settings.bg_color)
 
         # center the high score at the top of the screen
         self.high_score_rect = self.high_score_image.get_rect()  # get rect of high score
