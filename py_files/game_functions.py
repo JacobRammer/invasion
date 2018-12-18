@@ -5,9 +5,12 @@ from alien import Alien
 import os
 from time import sleep
 
+
 # TODO make aliens shoot bullets at ship
 #   add shootable missiles - may not be possible
 #   add total kill counter
+
+# sb = scoreboard
 
 
 def check_events(ai_settings, screen, stats, play_button, ship, aliens, bullets):
@@ -82,7 +85,6 @@ def play_music():
     """play music"""
 
     # TODO add credits for music usage
-    os.chdir("C:\\Users\\Jacob\\Documents\\invasion")
 
     pygame.mixer.pre_init(44100, -16, 2, 4096)  # start mixer with default pygame parameters
 
@@ -246,7 +248,7 @@ def check_play_button(ai_settings, screen, stats, play_button, ship, aliens, bul
         stats.reset_stats()  # reset the player statistics
         stats.game_active = True  # set status True to start game
         pygame.mouse.set_visible(False)  # hide the cursor once the game starts
-        ai_settings.initialize_dynamic_settings() # reset the game's settings
+        ai_settings.initialize_dynamic_settings()  # reset the game's settings
 
         # empty the screen from previous sessions
         aliens.empty()

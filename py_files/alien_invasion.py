@@ -49,7 +49,7 @@ def run_game():
             gf.update_aliens(ai_settings, stats, screen, ship, aliens, bullets)
 
         gf.update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets, play_button)  # update sprite movement
-        time.sleep(.01)  # limit while execution to limit CPU usage (seconds)
+        time.sleep(.015)  # limit while execution to limit CPU usage (seconds)
 
 
 run_game()
