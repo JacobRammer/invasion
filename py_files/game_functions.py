@@ -103,6 +103,7 @@ def update_bullets(ai_settings, screen, stats, sb, ship, aliens, bullets):
     for bullet in bullets.copy():
         if bullet.rect.bottom <= 0:
             bullets.remove(bullet)
+            sleep(.02)
 
     # check for bullet collision events
     check_bullet_alien_collisions(ai_settings, screen, stats, sb, ship, aliens, bullets)
@@ -118,6 +119,7 @@ def check_bullet_alien_collisions(ai_settings, screen, stats, sb, ship, aliens, 
         for aliens in collisions.values():
             stats.score += ai_settings.alien_points * len(aliens)  # to make sure all collisions are scored
             sb.prep_score()
+            sleep(.01)
         check_high_score(stats, sb)
 
     # check to see if all aliens have been destroyed

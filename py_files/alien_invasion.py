@@ -3,7 +3,7 @@ from settings import Settings
 from ship import Ship, Ship2
 import game_functions as gf
 from game_functions import play_music
-import time
+from time import sleep
 from pygame.sprite import Group
 from game_stats import GameStats
 from button import Button
@@ -26,7 +26,7 @@ def run_game():
     stats = GameStats(ai_settings)
     screen = pygame.display.set_mode((ai_settings.screen_width, ai_settings.screen_height))  # create screen settings
     # TODO change window icon
-
+    #   allow window to be resized
     sb = Scoreboard(ai_settings, screen, stats)
     # make a ship
     ship = Ship2(ai_settings, screen)  # using Ship2
@@ -47,9 +47,10 @@ def run_game():
             ship.update()
             gf.update_bullets(ai_settings, screen, stats, sb, ship, aliens, bullets)
             gf.update_aliens(ai_settings, stats, screen, ship, aliens, bullets)
+            sleep(.0001)
 
         gf.update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets, play_button)  # update sprite movement
-        time.sleep(.015)  # limit while execution to limit CPU usage (seconds)
+        sleep(.015)  # limit while execution to limit CPU usage (seconds)
 
 
 run_game()
