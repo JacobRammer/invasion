@@ -199,6 +199,7 @@ def update_aliens(ai_settings, stats, screen, ship, aliens, bullets):
 def check_fleet_edges(ai_settings, aliens):
     """shift if aliens touch edge of screen"""
 
+    sleep(.00001)
     for alien in aliens.sprites():  # loop through all aliens on screen
         if alien.check_edges():  # if alien is touching edge
             change_fleet_direction(ai_settings, aliens)  # change the fleet direction
