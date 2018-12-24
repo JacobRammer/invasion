@@ -2,7 +2,7 @@
 #   since high score is set to 0 on each startup, need to ask if user wants to load values
 
 
-class GameStats():
+class GameStats:
     """tracking statistics for invasion"""
 
     def __init__(self, ai_settings):
@@ -16,6 +16,7 @@ class GameStats():
 
         # high score should never be reset
         self.high_score = 0
+        self.level = 1
 
     def reset_stats(self):
         """initialize statistics that can change during the game"""
