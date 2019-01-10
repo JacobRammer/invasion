@@ -6,7 +6,6 @@ from time import sleep
 
 
 # TODO make aliens shoot bullets at ship
-#   add shootable missiles - may not be possible
 #   add total kill counter
 
 # sb = scoreboard

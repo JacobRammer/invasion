@@ -10,8 +10,6 @@ from button import Button
 from scoreboard import Scoreboard
 
 
-# left off at page 343
-
 def run_game():
     play_music()
 
