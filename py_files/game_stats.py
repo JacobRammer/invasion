@@ -1,7 +1,3 @@
-# TODO add high scores to a text file to be store between executions
-#   since high score is set to 0 on each startup, need to ask if user wants to load values
-
-
 class GameStats:
     """tracking statistics for invasion"""
 
