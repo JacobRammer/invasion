@@ -1,0 +1,6 @@
+*\__pychace__\
+*.pyc
+*.cpython.pyc
+py_files/__pycache__/game_functions.cpython-37.pyc
+py_files/__pycache__/scoreboard.cpython-37.pyc
+py_files/__pycache__/settings.cpython-37.pyc

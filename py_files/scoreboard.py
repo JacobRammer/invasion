@@ -23,6 +23,9 @@ class Scoreboard:
         self.prep_level()
         self.prep_ships()
 
+    def __repr__(self):
+        return f"{self.stats}"
+
     def prep_score(self):
         """turn the score into an image"""
 
@@ -45,6 +48,7 @@ class Scoreboard:
 
         # draw ships
         self.ships.draw(self.screen)
+
 
     def prep_high_score(self):
         """turn the high score into a rendered image"""
