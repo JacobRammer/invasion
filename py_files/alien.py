@@ -13,7 +13,7 @@ class Alien(Sprite):
         self.ai_settings = ai_settings
 
         # load the image and set the rect attribute
-        self.image = pygame.image.load("images/alien2.bmp").convert()
+        self.image = pygame.image.load("py_files/images/alien2.bmp").convert()
         # self.image = pygame.transform.scale(self.image, (60, 40))  # scale picture without losing background transpar.
         self.rect = self.image.get_rect()
 

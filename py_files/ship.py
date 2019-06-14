@@ -10,7 +10,7 @@ class Ship(Sprite):
         self.screen = screen
 
         # load the ship image and get its rect.
-        self.image = pygame.image.load("images/ship.bmp").convert_alpha()  # load ship image
+        self.image = pygame.image.load("py_files/images/ship.bmp").convert_alpha()  # load ship image
         self.rect = self.image.get_rect()  # rect is a rectangle (google it) places at origin (top left)
         self.screen_rect = screen.get_rect()
 
@@ -44,7 +44,7 @@ class Ship2(Sprite):
         self.ai_settings = ai_settings
 
         # load the ship's image and get its rect
-        self.image = pygame.image.load("images/ship2.bmp").convert_alpha()  # load ship image
+        self.image = pygame.image.load("py_files/images/ship2.bmp").convert_alpha()  # load ship image
         self.image = pygame.transform.scale(self.image, (60, 100))  # scale picture without losing background transpar.
         self.rect = self.image.get_rect()  # get the size of the image
         self.screen_rect = screen.get_rect()
@@ -90,7 +90,7 @@ class Ship2_Lives(Sprite):
         self.ai_settings = ai_settings
 
         # load the ship's image and get its rect
-        self.image = pygame.image.load("images/ship2.bmp").convert_alpha()  # load ship image
+        self.image = pygame.image.load("py_files/images/ship2.bmp").convert_alpha()  # load ship image
         self.image = pygame.transform.scale(self.image, (25, 35))  # scale picture without losing background transpar.
         self.rect = self.image.get_rect()  # get the size of the image
         self.screen_rect = screen.get_rect()

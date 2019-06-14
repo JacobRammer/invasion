@@ -87,7 +87,7 @@ def play_music():
     pygame.mixer.pre_init(44100, -16, 2, 4096)  # start mixer with default pygame parameters
 
     pygame.init()
-    pygame.mixer.music.load("music/track1.mp3")
+    pygame.mixer.music.load("py_files/music/track1.mp3")
     pygame.mixer.music.set_volume(.05)  # from 0 to 1
     pygame.mixer.music.play(-1)  # loop music
 
