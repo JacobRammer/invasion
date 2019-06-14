@@ -36,7 +36,14 @@ def run_game():
 
     # end object creations
 
+    """
+    Create a fleet of aliens behind the play button.
+    """
     gf.create_fleet(ai_settings, screen, ship, aliens)  # create a fleet of aliens may need to delete
+    # event = pygame.event.get()
+    if pygame.event == pygame.K_SPACE:
+        stats.reset_stats
+        stats.game_active = True
     # start main loop for the game
     while True:
         gf.check_events(ai_settings, screen, stats, sb, play_button, ship, aliens, bullets)  # checks for KB/M activity

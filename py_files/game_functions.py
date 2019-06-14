@@ -67,7 +67,6 @@ def check_keydown_events(event, ai_settings, screen, ship, bullets):
         # TODO after adding WASD, change this button
         sys.exit()
 
-
 def check_keyup_events(event, ship):
     """responds to key releases"""
 
@@ -254,7 +253,7 @@ def check_play_button(ai_settings, screen, stats, sb, play_button, ship, aliens,
     """start a new game when the player clicks on the button"""
 
     button_clicked = play_button.rect.collidepoint(mouse_x, mouse_y)  # True if button clicked. Else: False
-    if button_clicked and not stats.game_active:  # if button clicked is true and game is not active
+    if not stats.game_active:  # if button clicked is true and game is not active
         stats.reset_stats()  # reset the player statistics
         stats.game_active = True  # set status True to start game
 
